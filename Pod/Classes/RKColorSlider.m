@@ -66,8 +66,9 @@ double solveLinearEquation(double input, double startValue, double endValue, dou
 
 - (UIImage *)sliderImage
 {
-    NSString *bundlePath             = [[NSBundle mainBundle] pathForResource:@"RKColorSlider" ofType:@"bundle"];
-    NSBundle *bundle                 = [NSBundle bundleWithPath:bundlePath];
+    NSString *bundlePath = [[NSBundle bundleForClass:[RKColorSlider class]]
+                            pathForResource:@"RKColorSlider" ofType:@"bundle"];
+    NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
     NSString *imagePath = [bundle pathForResource:@"slider@2x" ofType:@"png"];
     return [UIImage imageWithContentsOfFile:imagePath];
 }
